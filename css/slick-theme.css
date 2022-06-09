@@ -1,0 +1,249 @@
+/* Слайдер */
+.slick-slider {
+    min-width: 0;
+}
+
+/* Слайдер запущен */
+.slick-slider.slick-initialized {}
+
+/* Слайдер с точками */
+.slick-slider.slick-dotted {}
+
+/* Ограничивающая оболочка */
+.slick-list {
+    overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track {
+    display: flex;
+}
+
+/* Слайд */
+.slick-slide {}
+
+/* Слайд активный (показывается) */
+.slick-slide.slick-active {}
+
+/* Слайд основной */
+.slick-slide.slick-current {}
+
+/* Слайд по центру */
+.slick-slide.slick-center {}
+
+/* Клонированный слайд */
+.slick-slide.slick-cloned {}
+
+/* Стрелка */
+.slick-arrow {}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev {}
+
+/* Стрелка вправо */
+.slick-arrow.slick-next {}
+
+/* Стрелка не активная */
+.slick-arrow.slick-disabled {}
+
+/* Точки (булиты) */
+.slick-dots {}
+
+.slick-dots li {}
+
+/* Активная точка */
+.slick-dots li.slick-active {}
+
+/* Элемент точки */
+.slick-dots li button {}
+
+
+/* Элементы слайдера Сards*/
+.cards__block {}
+
+.cards__block {
+    position: relative;
+
+}
+
+/* Стрелки */
+.cards__block .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    font-size: 0;
+    width: 30px;
+    height: 60px;
+    margin: -30px 0 0 0;
+}
+
+.cards__block .slick-arrow.slick-prev {
+    left: 0;
+    background: url(../img/Slider/sl-arrow_l.svg) 0 0 / 100% no-repeat;
+}
+
+.cards__block .slick-arrow.slick-next {
+    right: 0;
+    background: url(../img/Slider/sl-arrow_r.svg) 0 0 / 100% no-repeat;
+}
+
+/* точки */
+.cards__block .slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cards__block .slick-dots li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.cards__block .slick-dots li button {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid black;
+    opacity: 0.5;
+}
+
+.cards__block .slick-dots li.slick-active button {
+    background-color: black;
+}
+
+
+/* -------------------------------------------------------- */
+
+
+/* Элементы Слайдера Rewiews*/
+.reviews__wrapper {
+    padding: 0 60px 0 60px;
+    position: relative;
+
+}
+
+/* Стрелки */
+.reviews__wrapper .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    font-size: 0;
+    width: 30px;
+    height: 60px;
+    margin: -30px 0 0 0;
+}
+
+.reviews__wrapper .slick-arrow.slick-prev {
+    left: 0;
+    background: url(../img/Slider/sl-arrow_l.svg) 0 0 / 100% no-repeat;
+}
+
+.reviews__wrapper .slick-arrow.slick-next {
+    right: 0;
+    background: url(../img/Slider/sl-arrow_r.svg) 0 0 / 100% no-repeat;
+}
+
+/* точки */
+.reviews__wrapper .slick-dots {
+    top: 330px;
+    left: 290px;
+    margin: 0 auto;
+    padding-bottom: 70px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+
+}
+@media (max-width: 1000px){
+    .reviews__wrapper .slick-dots {
+        left: 45%;
+        top: 350px;
+    }
+}
+
+.reviews__wrapper .slick-dots li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.reviews__wrapper .slick-dots li button {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    background: rgba(255, 46, 99, 0.33);
+
+}
+
+.reviews__wrapper .slick-dots li.slick-active button {
+    background: #FF2E63;
+}
+
+/* --------------------------------------------------- */
+
+
+
+/* Элементы Слайдера Winners */
+.winners__cards {
+    
+
+}
+
+.winners__cards {
+    position: relative;
+
+}
+
+/* Стрелки */
+.winners__cards .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    font-size: 0;
+    width: 30px;
+    height: 60px;
+    margin: -30px 0 0 0;
+}
+
+.winners__cards .slick-arrow.slick-prev {
+    left: 0;
+    background: url(../img/Slider/sl-arrow_l.svg) 0 0 / 100% no-repeat;
+}
+
+.winners__cards .slick-arrow.slick-next {
+    right: 0;
+    background: url(../img/Slider/sl-arrow_r.svg) 0 0 / 100% no-repeat;
+}
+
+/* точки */
+.winners__cards .slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.winners__cards .slick-dots li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.winners__cards .slick-dots li button {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid black;
+    opacity: 0.5;
+}
+
+.winners__cards .slick-dots li.slick-active button {
+    background-color: black;
+}

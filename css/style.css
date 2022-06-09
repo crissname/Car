@@ -1,0 +1,966 @@
+@import url(zerostyle.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,400&family=Rajdhani:wght@500;700&display=swap');
+
+html,
+body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+body._key {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+h2 {
+    font-family: 'Rajdhani';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    color: #343434;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+a {
+    color: #252A34;
+
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    min-height: 40px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* -------header start------- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.header__container {
+
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+
+}
+
+.header__logo {
+    margin-right: 20px;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.header__logo span span {
+    color: #FF2E63;
+}
+
+.menu__icon {
+    display: none;
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -15px;
+
+}
+
+.menu__link {
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #252A34;
+}
+
+.menu__link:hover {
+    text-decoration: underline;
+}
+
+
+.menu__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    padding-right: 15px;
+}
+
+@media (max-width: 1024px) {
+    .menu__btn {
+        padding-right: 30px;
+    }
+}
+
+.menu__btn-1 {
+    border-radius: 5px;
+    margin-right: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FF2E63;
+}
+
+.menu__btn-1:hover {
+    color: #fff;
+    background-color: #FF2E63;
+}
+
+.menu__btn-2 {
+    background: #FF2E63;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.menu__btn-2:hover {
+    color: #FF2E63;
+    background-color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .header__logo span {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .menu__link {
+        font-size: 12px;
+        padding-right: 20px;
+    }
+
+    .btn {
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__container {
+        background-color: #fff;
+    }
+
+    .menu__icon {
+        border-radius: 5px;
+        height: 24px;
+        width: 24px;
+        background-color: #FF2E63;
+        z-index: 5;
+        display: block;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .menu__icon span,
+    .menu__icon::before,
+    .menu__icon::after {
+        left: 4px;
+        position: absolute;
+        height: 3px;
+        width: 16px;
+        border-radius: 7px;
+        transition: all 0.3s ease 0s;
+        background-color: #fff;
+    }
+
+    .menu__icon::before,
+    .menu__icon::after {
+        content: "";
+    }
+
+    .menu__icon::before {
+        top: 5px;
+
+    }
+
+    .menu__icon::after {
+        bottom: 5px;
+
+    }
+
+    .menu__icon span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+
+    .menu__icon._active {
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .menu__icon._active span {
+        transform: scale(0) translate(0px, -50%);
+
+    }
+
+    .menu__icon._active::before {
+        border-radius: 7px;
+        background-color: #FF2E63;
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -25%);
+    }
+
+    .menu__icon._active::after {
+        border-radius: 7px;
+        background-color: #FF2E63;
+        top: 50%;
+        transform: rotate(45deg) translate(0px, -25%);
+    }
+
+    .header__logo._active {
+        color: #fff;
+        z-index: 5;
+    }
+
+    .header__logo._active span span {
+        color: #fff;
+        z-index: 5;
+    }
+
+    .menu__body {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        margin-top: 50px;
+        padding: 100px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+        overflow: auto;
+    }
+
+    .menu__body._active::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 70px;
+        background-color: #FF2E63;
+        z-index: 2;
+    }
+
+    .menu__body._active {
+        left: 0;
+    }
+
+    .menu__list {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 0 30px 0;
+    }
+
+    .menu__list li {
+        margin-bottom: 30px;
+    }
+
+    .menu__link {
+        font-size: 20px;
+    }
+
+    .menu__btn {
+        flex-direction: row-reverse;
+    }
+}
+
+/* ------------ header end ------------- */
+
+/* -------Section promo start -------- */
+.promo {
+    margin-bottom: 100px;
+}
+
+.promo__wrapper {
+    display: flex;
+    margin-top: 96px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.promo__title {
+    margin-top: 95px;
+    max-width: 400px;
+    font-family: 'Rajdhani';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+}
+
+.promo__title-pink {
+    color: #FF2E63
+}
+
+.promo__btn {
+    display: block;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    max-width: 120px;
+    background-color: #346CD9;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.promo__btn span {
+    margin: 0 20px;
+}
+
+
+@media (max-width: 1161px) {
+    .promo__title h1 {
+        font-size: 35px;
+    }
+}
+
+@media(max-width: 768px) {
+    .promo__wrapper {
+        flex-direction: column;
+    }
+}
+
+.promo__img {
+    position: relative;
+    margin-right: -55px;
+}
+
+.promo__img img {
+    padding-top: 74px;
+    position: relative;
+    z-index: 4;
+    max-width: 100%;
+}
+
+.promo__img::after {
+    content: "";
+    background: linear-gradient(131.47deg, rgba(52, 108, 217, 0) 13.96%, rgba(52, 108, 217, 0.25) 85.97%);
+    width: 53%;
+    padding-bottom: 53%;
+    position: absolute;
+    bottom: -6.5%;
+    right: 0;
+    border-radius: 50%;
+    transform: translate(-24%, 0px);
+}
+
+/* .promo__img { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
+ } */
+
+/* .img__round {
+} */
+.img__car {
+    margin-top: 74px;
+}
+
+/* -------Section promo end -------- */
+
+
+
+
+/* -------Section Cards start -------- */
+
+.cards {
+    margin-bottom: 100px;
+}
+
+.cards__wrapper {
+
+    padding: 0 30px;
+
+}
+
+.cards__title {
+    margin-bottom: 35px;
+}
+
+.cards__block {}
+
+.cards__item {
+    margin: 0 15px;
+    margin-bottom: 5px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.cards__item:first-child {
+    margin-left: 0;
+}
+
+.cards__item:last-child {
+    margin-right: 0;
+}
+
+
+
+.item__title {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: 'Rajdhani';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #252A34
+}
+
+.item__price {
+    margin-left: 20px;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+@media (max-width: 385px) {
+    .item__price {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .item__last-arrow {
+        display: none;
+    }
+}
+
+.item__price {}
+
+.item__price p {
+    font-family: 'Rajdhani';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    color: #FF2E63;
+}
+
+.item__price p:last-child {
+    margin-left: 7px;
+    font-family: 'Rajdhani';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    /* identical to box height */
+    text-decoration-line: line-through;
+    color: #999999;
+}
+
+.item__last {
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item__last-title {
+    margin-right: 15px;
+    font-size: 14px;
+    line-height: 19px;
+    color: #343434
+}
+
+.item__last-arrow {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: #346CD9;
+    border-radius: 10px 0px;
+}
+
+@media (max-width: 768px) {
+    .cards__title {
+        margin: 60px 0;
+        text-align: center;
+    }
+
+    .cards__block {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cards__item:not(:last-child) {
+        margin-bottom: 30px;
+
+    }
+}
+
+@media (max-width: 385px) {
+
+    .item__last-arrow {
+        display: none;
+    }
+}
+
+/* ARROW------------------------------- */
+.arrow {
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+}
+
+.arrow span {
+    position: relative;
+    top: 20px;
+    width: 15px;
+    height: 3px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    left: 9px;
+    display: block;
+    border-radius: 2px;
+}
+
+.arrow span::after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 2px;
+    top: -3px;
+    right: -3px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
+
+.arrow span::before {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 2px;
+    top: 3px;
+    right: -3px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    transform: rotate(-45deg);
+    border-radius: 2px;
+}
+
+.arrow:hover {
+    animation: arrow 1s linear infinite;
+}
+
+@keyframes arrow {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 5px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+/* ARROW _______________________________________________ */
+/* -------Section Cards  end-------- */
+
+
+
+/* --------Section HOW start----------- */
+
+
+.how {
+    margin-bottom: 100px;
+}
+
+.how__wrapper {
+
+    padding: 0 30px;
+}
+
+.how__title {
+
+    text-align: center;
+    margin-bottom: 60px;
+
+}
+
+.how__block {
+    margin: 0 -6px;
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.how__card {
+    padding: 0 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+}
+
+
+
+.how__card-img {
+    margin-bottom: 30px;
+}
+
+.how__card-title {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #343434;
+}
+
+.how__arrow {
+    position: relative;
+    width: 32px;
+    height: 20px;
+    margin-top: 20px;
+}
+
+.how__arrow span {
+    position: absolute;
+
+    left: 0;
+    width: 32px;
+    height: 2px;
+    top: 10px;
+    border-radius: 7px;
+    background-color: #585858;
+}
+
+.how__arrow:before,
+.how__arrow:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    border-radius: 7px;
+    background-color: #585858;
+}
+
+.how__arrow:before {
+    left: 20px;
+    top: 16px;
+    transform: rotate(-45deg);
+
+}
+
+.how__arrow::after {
+    left: 20px;
+    bottom: 13px;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+    .how__block {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .how__arrow {
+        transform: rotate(90deg);
+        margin: 30px 0 30px 0;
+    }
+}
+
+/* --------Section HOW end----------- */
+
+/*-------Section Reviews start---------- */
+
+.reviews {
+    margin-bottom: 100px;
+    background-color: rgba(52, 108, 217, 0.12);
+}
+
+
+.reviews__wrapper {
+    margin: 0 auto;
+    padding: 0 30px;
+
+    max-width: 1170px;
+
+
+}
+
+.reviews__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviews__title {
+    max-width: 520px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.reviews__title-general {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #343434
+}
+
+.reviews__title-name {
+    margin: 30px 0 40px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #343434
+}
+
+.reviews__title-points {
+    display: flex;
+}
+
+.reviews__img {
+    width: 100%;
+}
+
+.reviews__img img {
+    width: 100%;
+    padding: 0 5px 0 5px;
+}
+
+@media (max-width: 1000px) {
+    .reviews__wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .reviews__title {
+        padding: 0 60px;
+    }
+
+    .reviews__img {
+        display: none;
+    }
+
+    .reviews__wrapper .slick-dots {
+
+        transform: translate(0, -50px);
+    }
+}
+
+
+/*------- Section Reciews end----------- */
+
+/* ----- Section winners start */
+.winners {
+    margin-bottom: 100px;
+}
+
+.winners__wrapper {
+    margin: 100px 0 0 0;
+    padding: 0 30px 0 30px;
+}
+
+.winners__title {
+    margin-bottom: 40px;
+}
+
+.winners__cards {}
+
+.winners__item:first-child {
+    margin-left: 0;
+}
+
+.winners__item:last-child {
+    margin-right: 0;
+}
+
+.winners__item {
+    margin: 0 15px;
+    margin-bottom: 5px;
+
+    max-width: 270px;
+    background-color: #fff;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    ;
+}
+
+.winners__item-title {
+    margin: 20px 0 0 20px;
+    font-family: 'Rajdhani';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #252A34;
+}
+
+.winners__item-subtitle {
+    padding-bottom: 20px;
+
+    margin: 7px 0 0px 20px;
+    font-size: 14px;
+    line-height: 19px;
+    color: #343434;
+}
+
+.winners__item img {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .winners__cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .winners__title {
+        text-align: center;
+    }
+
+    .winners__item:not(:last-child) {
+        margin: 0 30px 30px 0;
+    }
+}
+
+/* ------ Section winners end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------- footer start ----- */
+.footer {
+    width: 100%;
+    min-height: 70px;
+    background-color: #346CD9;
+}
+
+.footer__wrapper {
+    padding: 0 30px 0 30px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.footer__logo {
+    margin: auto 0;
+    font-family: 'Rajdhani';
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.menu__list-footer {
+    display: flex;
+    margin: 0 -15px;
+}
+
+
+
+.menu__link-footer {
+    padding: 0 15px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+}
+
+.menu__link-footer:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer__logo {
+        margin-top: 16px;
+    }
+
+    .footer__wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu__list-footer {
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu__list-footer li {
+        margin-bottom: 20px;
+    }
+}
+
+/*------- footer end ------- */
